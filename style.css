@@ -1,6 +1,15 @@
 /* @media only screen and (max-width: 768px) */
 /* do I need to include this? */
 
+#static{
+    display: none;
+}
+
+#gif{
+    display: block;
+    margin: auto;
+}
+
 body{
     background-color:#f8b8d0;
     color: #AA336A;
@@ -40,20 +49,22 @@ p{
 .intro, .intro-pic{
     border: 5px solid #000000;
     padding: 20px;
-    display: block;
-    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 10px;
     min-width: 90%;
     border-radius: 30px;
     background-color: #FFFFFF;
 }
 
+.intro-pic img, .intro p{
+    grid-column: 1/-1;
+    border-radius: 20px;
+}
+
 .intro a{
     text-decoration: underline;
 }
-/* might need to make this into a grid */
-/* also need to not hard-code the width */
-/* media query for movement!! */
 
 .pets-gallery, .food-gallery, .travel-gallery{
     display: grid;
@@ -86,13 +97,14 @@ p{
 .travel-gallery video, .pets-gallery video{
     display:block;
     width:100%;
-   object-fit: cover;
-   object-position: center;
+    object-fit: cover;
+    object-position: center;
 }
 
-li{
+nav li{
     display: inline-block;
 }
+
 
 .likes-list{
     display: grid;
@@ -100,14 +112,14 @@ li{
 }
 
 .likes-list > li{
-    grid-column: 2/2;
+    grid-column: 1/-1;
     background-color: #FFFFFF;
     text-align: center;
-    border: 5px solid #000000;
+    border: 3px solid #000000;
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 20px;
     margin: 10px;
-}
+} 
 
 span {
     display: block;
@@ -122,12 +134,16 @@ span {
     border: 5px solid #000000;
     border-radius: 30px;
     background-color: #FFFFFF;
-    padding: 20px;
+    padding: 30px;
 }
 
-.ingredients > li, .steps > li {
-    display: block;
-    list-style-type: circle;
+.ingredients li {
+    list-style: circle;
+    padding: 2px;
+}
+
+.steps li{
+    list-style-type: decimal;
     padding: 2px;
 }
 
@@ -155,14 +171,21 @@ nav a{
 nav a:active{
     font-weight: bold;
 }
-/* how to make a text decoration on current link page */
-
-nav a:visited{
-    text-decoration: underline;
-}
 
 nav a:hover{
     text-decoration: underline;
+}
+
+#pets{
+    font-weight: bold;
+}
+
+#recipe{
+    font-weight: bold;
+}
+
+#travel{
+    font-weight: bold;
 }
 
 #skip{
@@ -172,24 +195,26 @@ nav a:hover{
 } 
 
 #skip:focus{
-    left: auto;
-    top: 5px;   
-    overflow: auto;
+    position: fixed;
+    left: 40.5%;
+    top: 5px;
     z-index: 999;
     padding: 3px;
-    margin: 3px;
     border: solid black 2px;
     background-color: #FFFFFF;
     border-radius: 6px;
     text-decoration: underline;
-} 
-/* center skip to main? */
+}  
 
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion:reduce) {
     #gif{
         display: none;
     }
-    /* is this correct */
+
+    #static{
+        display: block;
+        margin: auto;
+    }   
 }
 
 @media screen and (min-width: 768px)
