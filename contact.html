@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Contact</title>
+</head>
+<body>
+
+    <a href="#main" id="mainskip">Skip to Main Content</a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home/Pets</a></li>
+            <li><a href="recipes.html">Recipes</a></li>
+            <li><a href="travel.html">Travel</a></li>
+            <li><a id="contact" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main" class="contact">
+    <h1>Contact Me!</h1>
+
+    <form class="contact" action="https://formspree.io/f/xpzgedvb" method="POST">
+  <label>
+    <label for="name">Name: </label>
+    <p id="name"><input id="name" type="text" placeholder="Enter your name" name="name"> </p>
+
+    <label for="email">Email: </label>
+    <p id="email"><input id="email" type="email" placeholder="Enter email" name="email"> </p>
+
+    <label for="subject">Subject: </label>
+    <p id="subject"><input id="subject" type="text" placeholder="Enter subject" name="subject"> </p>
+  </label> 
+  <label>
+   <p> I love hearing from you!<p>
+    <textarea name="message" placeholder="Say something nice..."></textarea>
+  </label> 
+  <button id="submit" type="submit">Send</button>
+</form>
+
+<div class="home">
+    <a href="index.html">Back to Home</a>
+    </div>
+
+    </main>
+    
+</body>
+</html>

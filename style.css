@@ -1,5 +1,11 @@
-/* @media only screen and (max-width: 768px) */
-/* do I need to include this? */
+
+@keyframes colors {
+    0%   {background-color:#ffbe61;}
+    25%  {background-color:#feffa3;}
+    50%  {background-color:#BAE1FF;}
+    75%  {background-color:#baffc9;}
+    100% {background-color:#eecbff;}
+  }
 
 #static{
     display: none;
@@ -18,48 +24,64 @@ body{
 h1{
     font-size: 50px;
     text-shadow: 2px 2px #FFFFFF;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', sans-serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     text-align: center;
 }
 
 h2{
     background-color: #AD3F60;
     font-size: 40px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', sans-serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     color: #FFFFFF;
     padding: 10px;
     margin: 10px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #BAE1FF;
+    border: 2px solid #8e1438;
 }
 
 h3{
     font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', sans-serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     background-color: #FF69B4;
     color: #000000; 
     padding: 10px;
     text-align: center;
     margin: 10px;
+    border-radius: 15px;
+    box-shadow: 8px 8px 8px #feffa3;
+    border: solid 2px 		#DE3163;
 }
 
 p{
     line-height: 150%;
     margin: 10px;
+    font-family: 'Trebuchet MS', sans-serif;
+
 }
 
 .intro, .intro-pic{
-    border: 5px solid #000000;
-    padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 10px;
-    min-width: 90%;
-    border-radius: 30px;
-    background-color: #FFFFFF;
+    box-sizing: border-box;
+    grid-template-columns: 1fr 5fr 1fr;
 }
 
-.intro-pic img, .intro p{
+.intro-pic img, .intro p, #gif{
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+    padding: 20px;
     grid-column: 1/-1;
-    border-radius: 20px;
+    box-shadow: 7px 7px 10px #baffc9;
+}
+
+.intro-pic img{
+    grid-column: 2/span 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .intro a{
@@ -68,21 +90,22 @@ p{
 
 .pets-gallery, .food-gallery, .travel-gallery{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    border: 5px solid #000000;
+    grid-template-columns: 1fr;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid #000000;
     padding: 20px;
     border-radius: 30px;
     background-color: #FFFFFF;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 20px;
+    margin: 20px;
     text-align: center;
 }
 
 .pet-pic, .food-pic, .travel-pic{
-    grid-column: 1/-1;
     margin-bottom: 10px;
     border-radius: 10px;
+    box-shadow: 2px 2px 2px #000000;
 }
 
 .travel-pic video{
@@ -101,43 +124,48 @@ p{
     object-position: center;
 }
 
+figcaption{
+    margin: 7px;
+}
+
 nav li{
     display: inline-block;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
-
-.likes-list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.likes-list > li{
-    grid-column: 1/-1;
+.likes-list li{
     background-color: #FFFFFF;
     text-align: center;
-    border: 3px solid #000000;
+    border: 2px solid #000000;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 10px;
+    font-size: larger;
+    font-family: 'Trebuchet MS', sans-serif;
 } 
 
 span {
     display: block;
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
     background-color: #732A40;
     color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #eecbff;
+    font-family: 'Trebuchet MS', sans-serif;
+
 }
 
 .ingredients, .steps{
-    margin: 10px;
+    margin: 20px;
     border: 5px solid #000000;
     border-radius: 30px;
     background-color: #FFFFFF;
     padding: 30px;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
-.ingredients li {
+.ingredients li{
     list-style: circle;
     padding: 2px;
 }
@@ -147,11 +175,8 @@ span {
     padding: 2px;
 }
 
-/* why isn't this creating bullet points */
-
 nav{
     display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr; */
     justify-content: space-evenly;
     justify-items: center;
     background-color: #e00b6f;
@@ -159,13 +184,18 @@ nav{
     margin-top: 40px;
     padding: 10px;
     border: 2px solid #AA336A;
+    border-radius: 10px;
+    animation-name: colors;
+    animation-duration: 4s;
 }
 
 nav a{
     background-color: #FFFFFF;
     padding: 5px;
-    margin: 20px;
+    margin: 8px;
     border-radius: 6px;
+    font-size: 15px;
+    box-shadow: 2px 2px 5px #000000;
 }
 
 nav a:active{
@@ -178,23 +208,31 @@ nav a:hover{
 
 #pets{
     font-weight: bold;
+    box-shadow: -2px -2px 2px #000000;
 }
 
 #recipe{
     font-weight: bold;
+    box-shadow: -2px -2px 2px #000000;
 }
 
 #travel{
     font-weight: bold;
+    box-shadow: -2px -2px 2px #000000;
 }
 
-#skip{
+#contact{
+    font-weight: bold;
+    box-shadow: -2px -2px 2px #000000;
+}
+
+#mainskip{
     text-transform: uppercase;
     position: absolute;
     left: -400px;
 } 
 
-#skip:focus{
+#mainskip:focus{
     position: fixed;
     left: 40.5%;
     top: 5px;
@@ -206,6 +244,320 @@ nav a:hover{
     text-decoration: underline;
 }  
 
+#top {
+    display: block;
+    color: #AA336A;
+    border: 3px solid #000000;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 2px 2px #FAC898;
+    font-family: 'Work Sans';
+    text-decoration: underline;
+    margin-top: 30px;
+}
+
+#recipelink{
+    text-decoration: underline;
+}
+
+#skip {
+    display: none;
+}
+
+#linktitle{
+    display: none;
+}
+
+#gameheader{
+    display: none;
+}
+
+#instructions{
+    display: none;
+}
+
+#dragdrop img{
+    display: none;
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.contact form{
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    padding: 20px;
+    grid-column: 1/-1;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.contact input{
+    border: solid 1px #000000;
+    padding: 4px;
+    border-radius: 3px;
+    color: #3d3d3d;
+}
+
+.contact input:hover{
+    background-color: #eecbff;
+}
+
+.contact textarea{
+    font-family: 'Trebuchet MS', sans-serif;
+    border: solid 1px #000000;
+    padding: 4px;
+    border-radius: 3px;
+    width: 100%;
+    height: 100px;
+    color: #3d3d3d;
+}
+
+.contact textarea:hover{
+    background-color: #eecbff;
+}
+
+.contact button{
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 4px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    background-color: #732A40;
+    color: #FFFFFF;
+    width: 18%;
+    border-radius: 4px;
+}
+
+.contact button:hover{
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    color: #732A40;
+}
+
+.contact label > label{
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 10px;
+}
+
+.home{
+    text-align: center;
+    padding: 5px;
+    font-size: 17px;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+}
+
+.home:hover{
+    color: #f8b8d0;
+}
+
+@media only screen and (min-width: 600px){
+
+.intro, .intro-pic{
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.intro-pic img, .intro p{
+    grid-column: 2/span 1;
+}
+
+.pets-gallery, .food-gallery, .travel-gallery{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.skip-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+#skip {
+    display: block;
+    color: #AA336A;
+    border: 1px solid #000000;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 5px #FAC898;
+    font-size: larger;
+    font-family: 'Work Sans';
+    text-decoration: underline;
+}
+
+#linktitle{
+    display: block;
+    color: #AA336A;
+    background-color: #ffd0b6;
+    font-size: 30px;
+    box-shadow: 10px 10px 10px #ff546e;
+    border-radius: 15px;
+    border: solid #ffbe61 1px;
+    font-weight: bold;
+}
+
+.likes-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+}
+
+#gameheader{
+    display: block;
+    animation-name: colors;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    border: none;
+    box-shadow: none;
+    border: 2px solid #FFFFFF;
+    font-weight: bold;
+}
+
+#dragdrop{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3px;
+    border: solid black 2px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin: 10px
+}
+
+#div1, #div2, #div3, #div4{  
+    display: block;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: #f8b8d0;
+  }
+
+  #div1 img, #div2 img, #div3 img, #div4 img{
+    display: block;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px #000000;
+  }
+
+  #instructions{
+    display: block;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+    padding: 20px;
+    grid-column: 1/-1;
+    box-shadow: 7px 7px 10px #baffc9;
+    margin: 15px;
+  }
+
+  nav a{
+    font-size: 20px;
+    margin: 30px;
+}
+
+.contact{
+    display: block;
+}
+
+.contact form{
+    width: 60%;
+    margin: auto;
+}
+
+
+}
+
+@media screen and (min-width: 768px) {
+
+img:hover, .pets-gallery:hover, .food-gallery:hover, 
+#gif.intro-pic:hover{
+    background-image: url(/images/pinkgradient.jpg);
+    background-size: cover;
+}
+
+.travel-gallery:hover{
+    background-color: #f8b8d0;
+    color: #000000;
+}
+
+#skip, #top{
+    text-decoration: none;
+}
+
+#skip:hover, #top:hover{
+    text-decoration: underline;
+}
+
+.intro{
+    grid-template-columns: 1fr;
+    margin: 20px;
+}
+
+.intro-pic{
+    align-self: center;
+}
+
+.desktop-intro-pets{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.pets-gallery, .travel-gallery{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.food-gallery{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.desktop-intro-recipes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.recipe-specs{
+    font-size: larger;
+}
+
+.recipe-lists{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skip-links{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#recipe-pic.intro-pic{
+    grid-template-columns: 1fr;
+}
+
+.desktop-intro-travel{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.travel-image{
+    align-self: center;
+}
+}
+
+
 @media (prefers-reduced-motion:reduce) {
     #gif{
         display: none;
@@ -214,33 +566,16 @@ nav a:hover{
     #static{
         display: block;
         margin: auto;
+        border-radius: 30px;
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+    padding: 20px;
+    grid-column: 1/-1;
+    box-shadow: 7px 7px 10px #baffc9;
     }   
+
+    #gameheader, nav{
+        animation: none;
+    }
+    
 }
-
-@media screen and (min-width: 768px)
-
-/* Desktop code here */
-
-
-/* .style1{
-    -webkit-border-radius: 27;
-    -moz-border-radius: 27;
-    border-radius: 27px;
-    -webkit-box-shadow: 1px 1px 30px #00ff91;
-    -moz-box-shadow: 1px 1px 30px #00ff91;
-    box-shadow: 1px 1px 30px #00ff91;
-    font-family: Georgia;
-    color: #1e5c29;
-    font-size: 20px;
-    background: #24b332;
-    padding: 10px 10px 10px 10px;
-    border: dotted #00ff91 6px;
-    text-decoration: none;  
-    display: block;
-    margin: auto;
-}
-
-.style1:hover{
-    background: #e00b6f;
-    text-decoration: none;
-}*/
